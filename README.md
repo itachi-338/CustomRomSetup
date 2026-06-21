@@ -24,8 +24,13 @@ ro.hwui.render_ahead=3
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
 ```
+## SYSTEM PROP CHANGES(REPLACE/ADD/REMOVE)
+```make
+# Animation override
+persist.sys.activity_anim_perf_override=true
+```
 
-## SIGN KEYS
+## SIGN ROMS
 ```make
 git clone https://github.com/LineageOS/scripts.git
 ```
@@ -51,18 +56,23 @@ cd vendor/lineage-priv/keys
 
 ## FLAGS
 ```make
+# OTHER ROMS
 TARGET_DISABLE_EPPE := true
 TARGET_ENABLE_BLUR := true
 PRODUCT_NO_CAMERA := true
 TARGET_EXCLUDES_AUDIOFX := true
 WITH_GMS := false
 TARGET_DISABLE_MATLOG := true
-```
+TARGET_BOOT_ANIMATION_RES := 1080
 
-## SYSTEM PROP CHANGES(REPLACE/ADD/REMOVE)
-```make
-# Animation override
-persist.sys.activity_anim_perf_override=true
+# AXION
+TARGET_DISABLE_EPPE := true
+TARGET_ENABLE_BLUR := true
+TARGET_INCLUDE_AXFX := true
+AXION_CAMERA_REAR_INFO := 64
+AXION_CAMERA_FRONT_INFO := 16
+AXION_MAINTAINER := Naitik
+AXION_PROCESSOR := Snapdragon
 ```
 
 ## OTHER
@@ -74,7 +84,7 @@ persist.sys.activity_anim_perf_override=true
 
 **sync repo:**
 ```make
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j
 ```
 
 **environment setup:**
