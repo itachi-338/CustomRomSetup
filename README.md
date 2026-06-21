@@ -23,7 +23,7 @@ debug.sf.enable_adpf_cpu_hint=true
 ro.hwui.render_ahead=3
 debug.hwui.use_hint_manager=true
 debug.hwui.target_cpu_time_percent=30
-
+```
 
 ## SIGN KEYS
 ```make
